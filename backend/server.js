@@ -39,6 +39,11 @@ app.use(cors({
 
 app.use(express.json());
 
+// ─── Welcome Route ───────────────────────────────────────────────
+app.get('/', (req, res) => {
+  res.send('<h1>Role-Based User Management API</h1><p>Status: Running</p><p>Go to <a href="/api/health">/api/health</a> for system status.</p>');
+});
+
 // ─── Health Check ─────────────────────────────────────────────────
 // Quick endpoint to verify the backend is alive
 app.get('/api/health', (_req, res) => {
