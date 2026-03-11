@@ -1,9 +1,9 @@
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://rolebased-user-management-system.onrender.com/api';
 
 // Check auth state on load
 document.addEventListener('DOMContentLoaded', () => {
     const userStr = localStorage.getItem('user');
-    
+
     // Auto redirect if logged in
     if (userStr && window.location.pathname.endsWith('index.html') || userStr && window.location.pathname === '/') {
         const user = JSON.parse(userStr);
@@ -25,11 +25,11 @@ const loginForm = document.getElementById('loginForm');
 if (loginForm) {
     loginForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
+
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
         const errorDiv = document.getElementById('loginError');
-        
+
         try {
             const res = await fetch(`${API_URL}/auth/login`, {
                 method: 'POST',
@@ -38,12 +38,12 @@ if (loginForm) {
                 },
                 body: JSON.stringify({ email, password })
             });
-            
+
             const data = await res.json();
-            
+
             if (res.ok) {
                 localStorage.setItem('user', JSON.stringify(data));
-                
+
                 if (data.role === 'Admin') {
                     window.location.href = 'admin-dashboard.html';
                 } else {
@@ -65,7 +65,7 @@ if (loginForm) {
 function getAuthHeaders() {
     const userStr = localStorage.getItem('user');
     if (!userStr) return {};
-    
+
     const user = JSON.parse(userStr);
     return {
         'Content-Type': 'application/json',

@@ -8,7 +8,7 @@ export default defineConfig({
     // Proxy all /api requests to the backend so there are ZERO CORS issues
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',
+        target: 'https://rolebased-user-management-system.onrender.com',
         changeOrigin: true,
         // Show clear console warnings instead of silent failures
         configure: (proxy) => {
