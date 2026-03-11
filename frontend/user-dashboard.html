@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RBAC - User Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fa-solid fa-user" style="color: var(--accent-color); margin-right: 10px;"></i>RBAC System</h2>
+                <p style="font-size: 0.8rem;" id="userNameDisplay">Loading...</p>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active"><i class="fa-solid fa-address-card"></i> My Profile</a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" class="nav-item" onclick="logout()" style="color: var(--danger-color)"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            </div>
+        </aside>
+
+        <main class="main-content" style="display: flex; align-items: center; justify-content: center;">
+            <div class="glass-panel" style="width: 100%; max-width: 600px; text-align: center;">
+                <div style="background: rgba(59, 130, 246, 0.1); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; color: var(--accent-color); font-size: 2rem;">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                
+                <h2 id="profileName">--</h2>
+                <p id="profileEmail" style="margin-bottom: 2rem;">--</p>
+
+                <div style="text-align: left;">
+                    <h3 style="font-size: 1rem; color: var(--text-secondary); margin-bottom: 1rem; border-bottom: 1px solid var(--panel-border); padding-bottom: 0.5rem;">Your Permissions</h3>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="glass-panel" style="padding: 1rem; border-radius: 8px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span><i class="fa-solid fa-book-open" style="margin-right: 8px; color: var(--text-secondary);"></i> Read</span>
+                                <span id="permRead" class="badge">--</span>
+                            </div>
+                        </div>
+                        <div class="glass-panel" style="padding: 1rem; border-radius: 8px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span><i class="fa-solid fa-pen" style="margin-right: 8px; color: var(--text-secondary);"></i> Write</span>
+                                <span id="permWrite" class="badge">--</span>
+                            </div>
+                        </div>
+                        <div class="glass-panel" style="padding: 1rem; border-radius: 8px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span><i class="fa-solid fa-pen-to-square" style="margin-right: 8px; color: var(--text-secondary);"></i> Update</span>
+                                <span id="permUpdate" class="badge">--</span>
+                            </div>
+                        </div>
+                        <div class="glass-panel" style="padding: 1rem; border-radius: 8px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span><i class="fa-solid fa-trash" style="margin-right: 8px; color: var(--text-secondary);"></i> Delete</span>
+                                <span id="permDelete" class="badge">--</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/user.js"></script>
+</body>
+</html>
