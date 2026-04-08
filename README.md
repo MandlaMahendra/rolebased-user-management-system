@@ -4,7 +4,7 @@ A modern, full-stack User Management System with granular role-based access cont
 
 ## 🚀 Live Demo
 - **Backend API:** [Role-Based API on Render](https://rolebased-user-management-system.onrender.com/api/health)
-- **Frontend (Coming Soon):** [Deployment Link placeholder]
+- **Frontend :https://rolebased-user-management-system-h5.vercel.app
 
 ## ✨ Features
 - **Authentication:** Secure login/signup with JWT and bcrypt password hashing.
